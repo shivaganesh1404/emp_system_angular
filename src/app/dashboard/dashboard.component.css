@@ -1,0 +1,93 @@
+
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 15%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    color: whitesmoke;
+    background-color:#4CAF50!important; /* Green*/
+    overflow: hidden !important; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  
+  
+  
+  .primary {
+    padding: 8px 8px 8px 32px;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #4CAF50;
+    color: whitesmoke;
+    align-content: center;
+    overflow: hidden !important;
+  
+  }
+  
+  mat-button-toggle {
+    padding: 8px 8px 8px 32px;
+    width: 100%;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #4CAF50;
+    color: whitesmoke;
+    display: block;
+    transition: 0.3s;
+    outline:hidden;
+    overflow: hidden !important;
+    
+  }
+  
+  mat-button-toggle:hover {
+    border: hidden !important;
+    color: #4CAF50;
+  
+    background-color: #FFF !important;
+  }
+  
+  .mat-button-toggle-checked {
+    border: hidden !important;
+    color: #4CAF50;
+    background-color: #FFF !important;
+    overflow: hidden !important;
+  
+  }
+  
+  .topnav{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .topnav a {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .mat-button-toggle-input {
+    background-color: none !important;
+    padding-left: 32px !important;
+    overflow: hidden !important;
+  
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  mat-button-toggle-group {
+    flex-wrap: wrap;
+    color:white;
+    border: hidden!important;
+    overflow: hidden !important;
+  
+  }
+  
+  

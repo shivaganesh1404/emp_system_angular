@@ -1,0 +1,100 @@
+﻿<mat-card class="card">
+    <h4 class="card-header">Register</h4>
+    <div class="card-body">
+        <div class="row" style="width: 100%;">
+            <div>
+            <div class="column">
+                <form [formGroup]="formImage" >
+                    <input name="file" type="file" (change)='onChange($event.target.files , 0)'>
+                    <input type="hidden" name="fileHidden" formControlName="profile"/>
+                    <!-- <input type="file" formControlName="profile"  (change)='onChange($event.target.files)' > -->
+                                        <!-- <button type="submit">Upload Image File</button> -->
+                
+                  </form>
+            </div>
+            <div class="column">
+                <div *ngIf="response && imageURL">
+                    <img [src]='imageURL' />
+                  </div>
+            </div>
+        </div>
+        </div>
+        <br/>
+        <br/>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                &nbsp;&nbsp;
+                <input type="text" formControlName="first_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" />
+                <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                &nbsp;&nbsp;
+                <input type="text" formControlName="last_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }" />
+                <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input formControlName="dob" type="date" [value]="dob | date: 'MM/dd/yyyy'" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }"  />
+                <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+                    <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="email">Email id</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email Id is required</div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="mobile_number">Mobile No.</label>
+                &nbsp;
+                <input type="text" formControlName="mobile_number"  maxlength="10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile_number.errors }" onkeydown="return ( event.ctrlKey || event.altKey 
+                || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
+                || (95<event.keyCode && event.keyCode<106)
+                || (event.keyCode==8) || (event.keyCode==9) 
+                || (event.keyCode>34 && event.keyCode<40) 
+                || (event.keyCode==46) )"/>
+                <div *ngIf="submitted && f.mobile_number.errors" class="invalid-feedback">
+                    <div *ngIf="f.mobile_number.errors.required">Mobile No. is required</div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <label for="password">Password</label>
+                &nbsp;&nbsp;
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Register
+                </button>
+            </div>
+        </form>
+
+    </div>
+</mat-card>

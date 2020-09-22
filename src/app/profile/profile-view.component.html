@@ -1,0 +1,27 @@
+<div class="transtabl-body" >
+
+    <div style="padding-left:15px;">
+    <div class="container-fluid">
+      <div class="row">
+                  <div class="col-sm-3 user-disp-div">
+                    
+                      <div class="profile-img txt-gt txt-gb">                               
+                      </div>
+                    
+                      <div class="txt-gt txt-h txt-gb txt-ctr">
+                          <table *ngIf='userDetails'>
+                            <img src="{{imgUrl}}" style="width: 150px; height: 150px;">
+                            <tr><td class="user-td">User ID</td><td>{{userDetails.id}}</td></tr>
+                            <tr><td class="user-td">First Name</td><td>{{userDetails.first_name}}</td></tr>
+                            <tr><td class="user-td">Last Name</td><td>{{userDetails.last_name}}</td></tr>
+                            <tr><td class="user-td">DoB</td><td>{{userDetails.dob}}</td></tr>
+                            <tr><td class="user-td">Email Id</td><td>{{userDetails.email}}</td></tr>
+                            <tr><td class="user-td">Mobile Number</td><td> &nbsp;+91 &nbsp;{{userDetails.mobile_number}}</td></tr>
+                          </table>
+                        </div>
+                  </div> 
+
+                  </div>
+                  </div>
+                  </div>
+                  </div>

@@ -1,0 +1,23 @@
+ <mat-card style="background-color: gold;">
+            <mat-card-title>Employee Management System</mat-card-title>
+      <mat-card-content>
+        <div >
+          <p>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Email" [(ngModel)]="Email" >
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Password" [(ngModel)]="Password" >
+            </mat-form-field>
+          </p>
+          <div class="button ">
+            <button mat-flat-button color="accent" (click)="submit()">Login</button>
+        </div>
+
+        </div>
+       
+      </mat-card-content>
+ 
+    </mat-card>

@@ -1,0 +1,50 @@
+<mat-drawer-container class="example-container" style="  overflow: hidden !important;">
+    <mat-drawer  class="sidenav" mode="side" opened > 
+      
+      <mat-button-toggle-group [(value)] = "selectedValue" #group="matButtonToggleGroup" >
+  
+        <mat-button-toggle *ngFor="let route of routes" 
+           mat-list-item  
+           class="primary"
+           (change)="toogleClick(route.label)"
+           [value]="route.label"
+           >
+           <mat-icon>{{route.icon}}</mat-icon>
+           <a >
+           {{route.label}} 
+           </a></mat-button-toggle>
+  
+          
+      </mat-button-toggle-group>
+      <a style="color:gray">
+          shivaganesh
+      </a>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar style="background-color:#4CAF50; color:whitesmoke;">
+        <a mat-button class="companyName" >
+          <span>Growth Plug</span>
+        </a>
+        <span class="example-spacer"></span>
+        <span class="example-spacer"></span>
+        <div class="topnav" >
+         
+          <a mat-button (click)="logout()">Login Out</a>
+        </div>
+      </mat-toolbar>
+      <div *ngIf="profile">
+        <app-profile></app-profile>
+      </div>
+      <div *ngIf="home">
+        <app-home></app-home>
+      </div>
+      <div *ngIf="setting">
+        <app-setting></app-setting>
+  
+      </div>
+      <div *ngIf="add">
+        <app-user-add [function]="fn"></app-user-add>
+  
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
